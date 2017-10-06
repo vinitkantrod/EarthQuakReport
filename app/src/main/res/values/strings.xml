@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">EarthQuake Report</string>
+    <string name="near_of">Near of</string>
 </resources>
