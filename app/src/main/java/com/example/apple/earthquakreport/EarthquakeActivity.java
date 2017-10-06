@@ -14,19 +14,19 @@ public class EarthquakeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.earthquake_activity);
 
-        ArrayList<String> earthquakes = new ArrayList<String>();
+        ArrayList<Earthquake> earthquakes = new ArrayList<Earthquake>();
 
-        earthquakes.add("San Francisco");
-        earthquakes.add("London");
-        earthquakes.add("Tokyo");
-        earthquakes.add("Mexico City");
-        earthquakes.add("Moscow");
-        earthquakes.add("Rio de Janeiro");
-        earthquakes.add("Paris");
+        earthquakes.add( new Earthquake("7.2", "San Francisco", "6th April 2006"));
+        earthquakes.add( new Earthquake("6.1", "London", "7th April 2006"));
+        earthquakes.add( new Earthquake("3.9", "Tokyo", "8th April 2006"));
+        earthquakes.add( new Earthquake("5.4", "Mexico City", "9th April 2006"));
+        earthquakes.add( new Earthquake("2.8", "Moscow", "10th April 2006"));
+        earthquakes.add( new Earthquake("4.9", "Rio de Janeiro", "12th April 2006"));
+        earthquakes.add( new Earthquake("1.6", "Paris", "14th April 2006"));
 
         ListView listView =  (ListView) findViewById(R.id.list);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, earthquakes);
+        EarthquakeAdapter adapter = new EarthquakeAdapter(this, earthquakes);
 
         listView.setAdapter(adapter);
 
