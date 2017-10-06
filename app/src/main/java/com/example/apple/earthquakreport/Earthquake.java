@@ -6,20 +6,20 @@ package com.example.apple.earthquakreport;
 
 public class Earthquake {
 
-    private String mMagnitude;
+    private Double mMagnitude;
     private String mLocation;
-    private  String mDate;
+    private  long mDate;
 
-    public Earthquake (String magnitude, String location, String date) {
+    public Earthquake (Double magnitude, String location, long date) {
         mMagnitude = magnitude;
         mLocation = location;
         mDate = date;
     }
 
-    public String getMagnitude() {return mMagnitude; }
+    public Double getMagnitude() {return mMagnitude; }
 
     public String getLocation() {return mLocation; }
 
-    public String getDate() {return mDate; }
+    public long getDate() {return mDate; }
 
 }
