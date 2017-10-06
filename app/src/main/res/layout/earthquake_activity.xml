@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:id="@+id/list"
+    android:divider="@null"
+    android:dividerHeight="0dp"
     android:layout_height="match_parent"
     tools:context="com.example.apple.earthquakreport.EarthquakeActivity">
 
