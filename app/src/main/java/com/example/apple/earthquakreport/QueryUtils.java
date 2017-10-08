@@ -20,6 +20,8 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
+import static android.icu.lang.UCharacter.GraphemeClusterBreak.L;
+
 /**
  * Created by apple on 06/10/17.
  */
@@ -35,6 +37,13 @@ public class QueryUtils {
 
     public static List<Earthquake> fetchEarthquakeData(String requestUrl) {
         // Create URL object
+        // This is to test progress bar before data loads
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            Log.i(LOG_TAG, "e" + e);
+        }
+
         URL url = createUrl(requestUrl);
 
         // Perform HTTP request to the URL and receive a JSON response back

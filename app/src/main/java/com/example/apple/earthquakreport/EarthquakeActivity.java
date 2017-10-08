@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -31,12 +32,13 @@ public class EarthquakeActivity extends AppCompatActivity implements LoaderCallb
     private TextView mEmptyStateTextView;
     private EarthquakeAdapter mAdapter;
     private static final int EARTHQUAKE_LOADER_ID = 1;
-
+    private ProgressBar mProgressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.earthquake_activity);
         mEmptyStateTextView = (TextView) findViewById(R.id.empty_view);
+        mProgressBar = (ProgressBar) findViewById(R.id.loading_spinner);
 
         // Find a reference to the {@link ListView} in the layout
         ListView earthquakeListView = (ListView) findViewById(R.id.list);
@@ -82,7 +84,9 @@ public class EarthquakeActivity extends AppCompatActivity implements LoaderCallb
     @Override
     public void onLoadFinished(Loader<List<Earthquake>> loader, List<Earthquake> earthquakes) {
         // Clear the adapter of previous earthquake data
+        mProgressBar.setVisibility(View.GONE);
         mEmptyStateTextView.setText(R.string.no_earthquake);
+
         mAdapter.clear();
 
         // If there is a valid list of {@link Earthquake}s, then add them to the adapter's
