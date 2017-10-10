@@ -39,7 +39,7 @@ public class QueryUtils {
         // Create URL object
         // This is to test progress bar before data loads
         try {
-            Thread.sleep(1000);
+            Thread.sleep(500);
         } catch (InterruptedException e) {
             Log.i(LOG_TAG, "e" + e);
         }
