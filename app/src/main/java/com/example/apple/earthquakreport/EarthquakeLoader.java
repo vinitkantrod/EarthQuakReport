@@ -5,6 +5,7 @@ package com.example.apple.earthquakreport;
  */
 import android.content.AsyncTaskLoader;
 import android.content.Context;
+import android.util.Log;
 
 import java.util.List;
 
@@ -41,6 +42,7 @@ public class EarthquakeLoader extends AsyncTaskLoader<List<Earthquake>> {
      */
     @Override
     public List<Earthquake> loadInBackground() {
+        Log.i(LOG_TAG, "mUrl" + mUrl);
         if (mUrl == null) {
             return null;
         }
